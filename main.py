@@ -1132,3 +1132,16 @@ def main():
             filters.TEXT & ~filters.COMMAND,
             handle_message,
         )
+    )
+
+    application.add_error_handler(error_handler)
+
+    logger.info("coach kimmy is starting...")
+
+    application.run_polling(
+        allowed_updates=Update.ALL_TYPES
+    )
+
+
+if __name__ == "__main__":
+    main()
